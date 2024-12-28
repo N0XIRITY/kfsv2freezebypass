@@ -1,0 +1,10 @@
+local plr = game:GetService("Players").LocalPlayer
+while true do task.wait()
+    task.spawn(function()
+        for i, v in next, plr.Character:GetDescendants() do
+            if v:IsA("BasePart") and v.Anchored then
+                v.Anchored = false
+            end
+        end
+    end)
+end
